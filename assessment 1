@@ -1,0 +1,53 @@
+// Create a variable to hold your NFTs
+const NFTs = [];
+
+// This function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT(name, eyeColor, shirtType, bling, background, rarity, dateCreated) {
+    const NFT = {
+        name: name,
+        eyeColor: eyeColor,
+        shirtType: shirtType,
+        bling: bling,
+        background: background,
+        rarity: rarity,
+        dateCreated: dateCreated
+    };
+
+    NFTs.push(NFT);
+}
+
+// Create a "loop" that will go through an "array" of NFTs
+// and print their metadata with console.log()
+function listNFTs() {
+    NFTs.forEach((nft, index) => {
+        console.log('NFT: ${index + 1}');
+        console.log('Name: ${nft.name}');
+        console.log('Eye Color: ${nft.eyeColor}');
+        console.log('Shirt Type: ${nft.shirtType}');
+        console.log('Bling: ${nft.bling}');
+        console.log('Background: ${nft.background}');
+        console.log('Rarity: ${nft.rarity}');
+        console.log('Date Created: ${nft.dateCreated}');
+        console.log('----------------------');
+    });
+}
+
+// Print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+    return NFTs.length;
+}
+
+// Call your functions below this line
+mintNFT("Exo", "Blue", "Armor", "Diamond Ring", "City", "Legendary", "10-12-1998");
+mintNFT("Jash", "Brown", "Stripes", "Gold Hand", "Forest", "Rare", "06-10-1999");
+mintNFT("Speedy", "Black", "Archery", "Silver Ring", "Waterfall", "Rare", "15-11-2000");
+mintNFT("Jack", "Green", "Tech Suit", "Diamond Teeth", "Forest", "Rare", "30-01-2001");
+mintNFT("Harish", "Yellow", "Sword Suit", "Silver-Gold Necklace", "City", "Legendary", "15-12-2001");
+mintNFT("Tender", "Red", "Bold", "Diamond Ring", "City", "Legendary", "24-09-2002");
+mintNFT("Plates", "Bluish-Green", "Armor", "Silver Bracelets", "Waterfall", "Legendary", "09-12-2003");
+mintNFT("Foxy", "Reddish", "Archery", "Gold Chain", "Forest", "Legendary", "01-12-2004");
+
+listNFTs();
+console.log("Total number of NFTs: " + getTotalSupply());
